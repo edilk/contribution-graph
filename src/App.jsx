@@ -28,8 +28,6 @@ function App() {
 
   const dateArray = getDateArray(dates);
 
-  console.log(dateArray);
-
   return (
     <div className='container'>
       <div className='monthNames'>
