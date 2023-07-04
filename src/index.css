@@ -2,11 +2,6 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -14,56 +9,110 @@
   -webkit-text-size-adjust: 100%;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+* {
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
+  padding: 0;
+  background-color: rgb(229, 229, 229);
+}
+.container {
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  flex-direction: column;
+  width: 1120px;
+  height: 279px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  background-color: #fff;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.monthNames {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  margin: 75px 140px 5px 133px;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.weeks {
+  margin: 15px 5px 30px 95px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.weeks span {
+  margin-bottom: 18.5px;
+}
+
+.monthNames span,
+.weeks span,
+.levelContainer span {
+  color: #959494;
+  font-size: 12px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.weeksAndCells {
+  display: flex;
+  height: 117px;
+}
+
+.cellContainer {
+  width: 865px;
+  height: 117px;
+  display: grid;
+  grid-template-columns: repeat(51, 15px);
+  grid-template-rows: repeat(7, 15px);
+  grid-auto-flow: column;
+  gap: 2px;
+}
+
+.levelContainer {
+  display: flex;
+  margin: 15px 838px 57px 116px;
+}
+
+.cellBox {
+  display: grid;
+  grid-template-columns: repeat(5, 15px);
+  gap: 2px;
+  width: 83px;
+  margin-left: 6.45px;
+  margin-right: 10px;
+}
+
+.cell {
+  width: 15px;
+  height: 15px;
+  background-color: #EDEDED;
+}
+
+.nine {
+  background-color: #ACD5F2;
+}
+
+.nineteen {
+  background-color: #7FA8C9;
+}
+
+.twentyNine {
+  background-color: #527BA0;
+}
+
+.thirtyPlus {
+  background-color: #254E77;
+}
+
+.cell:hover {
+  position: relative;
+  width: 17px;
+  height: 17px;
+  margin-top: -1px;
+  margin-left: -1px;
+  border: 1px solid rgba(0, 0, 0, 0.50);
 }
